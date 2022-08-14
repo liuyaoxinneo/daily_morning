@@ -32,6 +32,14 @@ def get_weather():
   weather2 = res['data']['list'][1]
   return weather['weather'], math.floor(weather['low']), math.floor(weather['high']), weather2['weather'], math.floor(weather2['low']), math.floor(weather2['high'])
 
+# 返回今天的天气，今天的最低温~最高温，明天的天气，明天的最低温~最高温，
+def get_weather():
+  url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
+  res = requests.get(url).json()
+  weather = res['data']['list'][0]
+  weather2 = res['data']['list'][1]
+  return weather['weather'], math.floor(weather['low']), math.floor(weather['high']), weather2['weather'], math.floor(weather2['low']), math.floor(weather2['high'])
+
 # def get_count():
 #   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
 #   return delta.days
