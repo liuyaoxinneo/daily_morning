@@ -62,8 +62,8 @@ nowTemp, todayWeather, todayLow, todayHigh, tomorrowWeather, tomorrowLow, tomorr
 data = {
   "now_temp":{"value",nowTemp},
   "today_weather":{"value":todayWeather},
-  "today_low":{"value":todayLow,"color":"#33cc99"},
-  "today_high":{"value":todayHigh,"color":"#ff3333"},
+  "today_low":{"value":todayLow},
+  "today_high":{"value":todayHigh,},
   "tomorrow_weather":{"value":tomorrowWeather},
   "tomorrow_low":{"value":tomorrowLow},
   "tomorrow_high":{"value":tomorrowHigh},
