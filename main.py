@@ -24,21 +24,13 @@ template_id = os.environ["TEMPLATE_ID"]
 #   weather = res['data']['list'][0]
 #   return weather['weather'], math.floor(weather['temp'])
 
-# 返回今天的天气，今天的最低温~最高温，明天的天气，明天的最低温~最高温，
+# 返回当前温度，今天的天气，今天的最低温~最高温，明天的天气，明天的最低温~最高温，
 def get_weather():
   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
   res = requests.get(url).json()
   weather = res['data']['list'][0]
   weather2 = res['data']['list'][1]
-  return weather['weather'], math.floor(weather['low']), math.floor(weather['high']), weather2['weather'], math.floor(weather2['low']), math.floor(weather2['high'])
-
-# 返回今天的天气，今天的最低温~最高温，明天的天气，明天的最低温~最高温，
-def get_weather():
-  url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
-  res = requests.get(url).json()
-  weather = res['data']['list'][0]
-  weather2 = res['data']['list'][1]
-  return weather['weather'], math.floor(weather['low']), math.floor(weather['high']), weather2['weather'], math.floor(weather2['low']), math.floor(weather2['high'])
+  return weather['temp'], weather['weather'], math.floor(weather['low']), math.floor(weather['high']), weather2['weather'], math.floor(weather2['low']), math.floor(weather2['high'])
 
 # def get_count():
 #   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
@@ -64,13 +56,14 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 # wea, temperature = get_weather()
-todayWeather, todayLow, todayHigh, tomorrowWeather, tomorrowLow, tomorrowHigh = get_weather()
+nowTemp, todayWeather, todayLow, todayHigh, tomorrowWeather, tomorrowLow, tomorrowHigh = get_weather()
 # data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 # data = {"words":{"value":get_words(), "color":get_random_color()}}
 data = {
+  "now_temp":{"value",nowTemp},
   "today_weather":{"value":todayWeather},
-  "today_low":{"value":todayLow},
-  "today_high":{"value":todayHigh},
+  "today_low":{"value":todayLow,"color":"#33cc99"},
+  "today_high":{"value":todayHigh,"color":"#ff3333"},
   "tomorrow_weather":{"value":tomorrowWeather},
   "tomorrow_low":{"value":tomorrowLow},
   "tomorrow_high":{"value":tomorrowHigh},
