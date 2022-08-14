@@ -8,7 +8,7 @@ import random
 
 today = datetime.now()
 # start_date = os.environ['START_DATE']
-# city = os.environ['CITY']
+city = os.environ['CITY']
 # birthday = os.environ['BIRTHDAY']
 
 app_id = os.environ["APP_ID"]
@@ -18,11 +18,11 @@ user_id = os.environ["USER_ID"]
 template_id = os.environ["TEMPLATE_ID"]
 
 
-def get_weather():
-  url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
-  res = requests.get(url).json()
-  weather = res['data']['list'][0]
-  return weather['weather'], math.floor(weather['temp'])
+# def get_weather():
+#   url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
+#   res = requests.get(url).json()
+#   weather = res['data']['list'][0]
+#   return weather['weather'], math.floor(weather['temp'])
 
 # 返回今天的天气，今天的最低温~最高温，明天的天气，明天的最低温~最高温，
 def get_weather():
