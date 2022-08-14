@@ -5,4 +5,5 @@
 明天气温预计：{{tomorrow_low.DATA}}℃~{{tomorrow_high.DATA}}℃
 注意天气变化，照顾好自己哟！
 
-今日元气加油站：{{words.DATA}}
+今日彩虹屁：
+{{words.DATA}}
