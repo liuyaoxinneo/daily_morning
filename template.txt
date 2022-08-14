@@ -1,7 +1,0 @@
-今天上海的天气是：{{today_weather.DATA}}
-当前温度：{{today_low.DATA}}℃~{{today_high.DATA}}℃
-明天的天气预计是：{{tomorrow_weather.DATA}} 
-明天气温预计：{{tomorrow_low.DATA}}℃~{{tomorrow_high.DATA}}℃
-注意天气变化，照顾好自己哟！
-
-今日元气加油站：{{words.DATA}}
