@@ -60,13 +60,13 @@ nowTemp, todayWeather, todayLow, todayHigh, tomorrowWeather, tomorrowLow, tomorr
 # data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 # data = {"words":{"value":get_words(), "color":get_random_color()}}
 data = {
-  "now_temp":{"value",nowTemp},
+  "now_temp":{"value":nowTemp},
   "today_weather":{"value":todayWeather},
-  "today_low":{"value":todayLow},
-  "today_high":{"value":todayHigh,},
+  "today_low":{"value":todayLow,"color":"#33cc99"},
+  "today_high":{"value":todayHigh,"color":"#ff3333"},
   "tomorrow_weather":{"value":tomorrowWeather},
-  "tomorrow_low":{"value":tomorrowLow},
-  "tomorrow_high":{"value":tomorrowHigh},
+  "tomorrow_low":{"value":tomorrowLow,"color":"#33cc99"},
+  "tomorrow_high":{"value":tomorrowHigh"color":"#ff3333"},
   "words":{"value":get_words(), "color":get_random_color()}
   }
 res = wm.send_template(user_id, template_id, data)
