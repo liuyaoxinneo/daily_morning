@@ -67,7 +67,7 @@ data = {
   "tomorrow_weather":{"value":tomorrowWeather},
   "tomorrow_low":{"value":tomorrowLow,"color":"#33cc99"},
   "tomorrow_high":{"value":tomorrowHigh,"color":"#ff3333"},
-  "words":{"value":get_words(), "color":"ff3366"}
+  "words":{"value":get_words(), "color":"#ff3366"}
   }
 res = wm.send_template(user_id, template_id, data)
 print(res)
