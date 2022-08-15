@@ -121,7 +121,7 @@ data = {
   "tomorrow_weather":{"value":tomorrowWeather},
   "tomorrow_low":{"value":tomorrowLow,"color":get_color(tomorrowLow)},
   "tomorrow_high":{"value":tomorrowHigh,"color":get_color(tomorrowHigh)},
-  "words":{"value":get_words(), "color":get_random_color()}
+  "words":{"value":get_words(), "color":get_random_color()},
   "today_law":{"value":get_law(), "color":get_random_color()}
   }
 res = wm.send_template(user_id, template_id, data)

@@ -7,3 +7,6 @@
 
 今日彩虹屁：
 {{words.DATA}}
+
+今日法条：
+{{today_law.DATA}}
