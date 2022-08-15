@@ -24,7 +24,7 @@ def get_weather():
   res = requests.get(url).json()
   weather = res['data']['list'][0]
   weather2 = res['data']['list'][1]
-  return weather['temp'], weather['weather'], math.floor(weather['low']), math.floor(weather['high']), weather2['weather'], math.floor(weather2['low']), math.floor(weather2['high'])
+  return math.floor(weather['temp']), weather['weather'], math.floor(weather['low']), math.floor(weather['high']), weather2['weather'], math.floor(weather2['low']), math.floor(weather2['high'])
 
 
 def get_color(now_temp):
