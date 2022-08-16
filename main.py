@@ -27,6 +27,17 @@ def get_weather():
   return math.floor(weather['temp']), weather['weather'], math.floor(weather['low']), math.floor(weather['high']), weather2['weather'], math.floor(weather2['low']), math.floor(weather2['high'])
 
 
+# 8.17根据当前天气选择提醒
+def get_note(weather):
+  note = "出门"
+  if weather.find("晴") != -1:
+    note += "要注意防晒哟"
+    return note
+  if weather.find("雨") != -1:
+    note += "请记得带伞哟"
+    return note
+  return note + "注意安全哟"
+
 def get_color(now_temp):
   if now_temp>40:
     return "#CC0000"
@@ -122,7 +133,8 @@ data = {
   "tomorrow_low":{"value":tomorrowLow,"color":get_color(tomorrowLow)},
   "tomorrow_high":{"value":tomorrowHigh,"color":get_color(tomorrowHigh)},
   "words":{"value":get_words(), "color":get_random_color()},
-  "today_law":{"value":get_law(), "color":get_random_color()}
+  "today_law":{"value":get_law(), "color":get_random_color()},
+  "note":{"value":get_note(todayWeather), "color":get_random_color()}
   }
 res = wm.send_template(user_id, template_id, data)
 print(res)

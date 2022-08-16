@@ -1,7 +1,7 @@
 name: morning
 on:
   schedule:
-  - cron:  '0 1 * * *' #https://crontab.guru/examples.html utc+0008=beijing
+  - cron:  '0 0 * * *' #https://crontab.guru/examples.html utc+0008=beijing
   workflow_dispatch:
 
 jobs:
